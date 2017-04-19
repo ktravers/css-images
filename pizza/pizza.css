@@ -24,8 +24,8 @@ body {
 
 .pizza {
   position: relative;
-  height: 40vmin;
-  width: 40vmin;
+  height: 280px;
+  width: 280px;
   z-index: 0;
   border-radius: 100%;
   background-color: #BBB083;
@@ -35,79 +35,75 @@ body {
   position: absolute;
   top: 5%;
   left: 5%;
-  height: 36vmin;
-  width: 36vmin;
+  height: 250px;
+  width: 250px;
   border-radius: 100%;
-  background-color: #ffdc73;
+  background-color: #FFDC73;
   z-index: 1;
 }
 
-.topping { /* olives */
+
+/*
+ * Toppings
+ */
+
+.topping {
   position: absolute;
-  top: 20%;
-  left: 20%;
+  z-index: 2;
+}
+
+
+/*
+ * Pepperonis (Solid Circles)
+ */
+
+.pepperoni {
+  height: 25px;
+  width: 25px;
+  background-color: #CC333F;
+  border-radius: 100%;
+}
+
+.pepperoni:nth-child(1) {
+  /*top:;
+  left:;*/
+}
+
+
+/*
+ * Black Olives (Rings)
+ */
+
+.black-olive {
+  height: 9px;
+  width: 9px;
   border: 8px solid #000;
   border-radius: 100%;
-  height: 2vmin;
-  width: 2vmin;
-  z-index: 2;
 }
 
-.topping:nth-of-type(2) {
-  top: 15%;
-  left: 55%;
-}
-.topping:nth-of-type(3) {
-  top: 35%;
-  left: 30%;
-}
-.topping:nth-of-type(4) {
-  top: 35%;
-  left: 70%;
-}
-.topping:nth-of-type(5) {
-  top: 45%;
-  left: 50%;
-}
-.topping:nth-of-type(6) {
-  top: 50%;
-  left: 10%;
-}
-.topping:nth-of-type(7) {
-  top: 75%;
-  left: 20%;
-}
-.topping:nth-of-type(8) {
-  top: 60%;
-  left: 75%;
-}
-.topping:nth-of-type(9) {
-  top: 65%;
-  left: 40%;
-}
-.topping:nth-of-type(10) {
-  top: 80%;
-  left: 55%;
+
+/*
+ * Green Peppers (Triangles)
+ */
+
+.green-pepper {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 10px 0 10px;
+  border-color: #4D90FE transparent transparent transparent;
 }
 
-.topping:before,
-.topping:after {
-  content: '';
-  position: absolute;
-  z-index: 2;
+.mushroom {
+  position: relative;
 }
 
-.topping:before { /* pepperonis */
-  width: 4vmin;
-  height: 4vmin;
-  border-radius: 100%;
-  box-shadow: 1vmin -5vmin 0 #cc333f;
+.mushroom__top {
+
 }
 
-.topping:after { /* peppers */
-  width: 3vmin;
-  height: 2vmin;
-  box-shadow: -2vmin -4vmin 0 #4d90fe, 3vmin -1vmin 0 #fff;
+.mushroom__bottom {
+
 }
 
 
@@ -189,18 +185,18 @@ body {
   position: absolute;
   width: 2.5vmin;
   height: 2.5vmin;
-  background-color: #cc333f;
+  background-color: #CC333F;
   left: -2vmin;
   top: -14vmin;
   z-index: 2;
 }
 
 .slice:nth-of-type(2n):after {
-  box-shadow: 1vmin 5vmin 0 #cc333f;
+  box-shadow: 1vmin 5vmin 0 #CC333F;
 }
 
 .slice:nth-of-type(4n):after {
-  box-shadow: 1vmin 5vmin 0 #cc333f, 3vmin 10vmin 0 #cc333f;
+  box-shadow: 1vmin 5vmin 0 #CC333F, 3vmin 10vmin 0 #CC333F;
 }
 
 
