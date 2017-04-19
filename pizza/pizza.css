@@ -19,9 +19,6 @@ body {
 
 .pizza.simple,
 .pizza.supreme {
-  position: relative;
-  height: 20vmin;
-  width: 20vmin;
 }
 
 
@@ -30,21 +27,40 @@ body {
  */
 
 .pizza.simple {
-  background-color: #ffdc73;
-  border: 8px solid #bbb083;
+  position: relative;
+  height: 40vmin;
+  width: 40vmin;
   border-radius: 100%;
+  background-color: #BBB083;
+  z-index: 0;
+}
+
+.cheese {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  height: 36vmin;
+  width: 36vmin;
+  border-radius: 100%;
+  background-color: #ffdc73;
+  z-index: 1;
 }
 
 .topping {
+  z-index: 2;
 }
 
 
 /*
  * Supreme
+ * inspired by https://codepen.io/cobra_winfrey/pen/ygojOG
  */
 
 .pizza.supreme {
-  animation: rotate 13s linear infinite;
+  position: relative;
+  height: 40vmin;
+  width: 40vmin;
+  animation: rotate 26s linear infinite;
 }
 
 @keyframes rotate {
@@ -60,9 +76,9 @@ body {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 10vmin 2.75vmin 0 2.75vmin;
+  border-width: 20vmin 5vmin 0 5vmin;
   border-color: #ffdc73 transparent transparent transparent;
-  left: 7.5vmin;
+  left: 15vmin;
   top: 0;
   transform-origin: 50% 100%;
   transform: rotate(0deg);
@@ -88,11 +104,11 @@ body {
 }
 
 .slice:nth-of-type(2n):after {
-  box-shadow: 0.5vmin 2.5vmin 0 #cc333f;
+  box-shadow: 1vmin 5vmin 0 #cc333f;
 }
 
 .slice:nth-of-type(4n):after {
-  box-shadow: 0.5vmin 2.5vmin 0 #cc333f, 1.5vmin 5vmin 0 #cc333f;
+  box-shadow: 1vmin 5vmin 0 #cc333f, 3vmin 10vmin 0 #cc333f;
 }
 
 .slice:nth-of-type(1) {
@@ -158,22 +174,22 @@ body {
 .slice:before {
   content: '';
   position: absolute;
-  height: 1.5vmin;
-  width: 6vmin;
+  height: 3vmin;
+  width: 12vmin;
   background-color: #bbb083;
-  top: -10.5vmin;
-  left: -3vmin;
-  border-radius: 100vmin 100vmin 0.5vmin 0.5vmin / 50vmin 50vmin;
+  top: -21vmin;
+  left: -6vmin;
+  border-radius: 200vmin 200vmin 1vmin 1vmin / 100vmin 100vmin;
 }
 
 .slice:after {
   content: '';
   border-radius: 100%;
   position: absolute;
-  width: 1.25vmin;
-  height: 1.25vmin;
+  width: 2.5vmin;
+  height: 2.5vmin;
   background-color: #cc333f;
-  left: -1vmin;
-  top: -7vmin;
+  left: -2vmin;
+  top: -14vmin;
   z-index: 2;
 }
