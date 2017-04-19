@@ -1,2 +1,1 @@
-# css-images
-Pure CSS Images Tutorials
+## Pure CSS Images Tutorials
