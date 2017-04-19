@@ -4,7 +4,7 @@
 
 
 /*
- * Shared
+ * Base
  */
 
 body {
@@ -17,22 +17,18 @@ body {
   background-color: #00BCE1;
 }
 
-.pizza.simple,
-.pizza.supreme {
-}
-
 
 /*
- * Simple
+ * Simple Pizza
  */
 
-.pizza.simple {
+.pizza {
   position: relative;
   height: 40vmin;
   width: 40vmin;
+  z-index: 0;
   border-radius: 100%;
   background-color: #BBB083;
-  z-index: 0;
 }
 
 .cheese {
@@ -46,20 +42,85 @@ body {
   z-index: 1;
 }
 
-.topping {
+.topping { /* olives */
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  border: 8px solid #000;
+  border-radius: 100%;
+  height: 2vmin;
+  width: 2vmin;
   z-index: 2;
+}
+
+.topping:nth-of-type(2) {
+  top: 15%;
+  left: 55%;
+}
+.topping:nth-of-type(3) {
+  top: 35%;
+  left: 30%;
+}
+.topping:nth-of-type(4) {
+  top: 35%;
+  left: 70%;
+}
+.topping:nth-of-type(5) {
+  top: 45%;
+  left: 50%;
+}
+.topping:nth-of-type(6) {
+  top: 50%;
+  left: 10%;
+}
+.topping:nth-of-type(7) {
+  top: 75%;
+  left: 20%;
+}
+.topping:nth-of-type(8) {
+  top: 60%;
+  left: 75%;
+}
+.topping:nth-of-type(9) {
+  top: 65%;
+  left: 40%;
+}
+.topping:nth-of-type(10) {
+  top: 80%;
+  left: 55%;
+}
+
+.topping:before,
+.topping:after {
+  content: '';
+  position: absolute;
+  z-index: 2;
+}
+
+.topping:before { /* pepperonis */
+  width: 4vmin;
+  height: 4vmin;
+  border-radius: 100%;
+  box-shadow: 1vmin -5vmin 0 #cc333f;
+}
+
+.topping:after { /* peppers */
+  width: 3vmin;
+  height: 2vmin;
+  box-shadow: -2vmin -4vmin 0 #4d90fe, 3vmin -1vmin 0 #fff;
 }
 
 
 /*
- * Supreme
+ * Supreme Pizza
  * inspired by https://codepen.io/cobra_winfrey/pen/ygojOG
  */
 
-.pizza.supreme {
+.pizza--supreme {
   position: relative;
   height: 40vmin;
   width: 40vmin;
+  z-index: 0;
   animation: rotate 26s linear infinite;
 }
 
@@ -70,18 +131,16 @@ body {
 }
 
 .slice {
-  z-index: -1;
-  overflow: visible;
   position: absolute;
-  width: 0;
+  width: 1px; /* solves off-by-one px issue w/ border size */
   height: 0;
   border-style: solid;
   border-width: 20vmin 5vmin 0 5vmin;
   border-color: #ffdc73 transparent transparent transparent;
   left: 15vmin;
-  top: 0;
   transform-origin: 50% 100%;
   transform: rotate(0deg);
+  z-index: 1;
   animation: loading 1.8125s ease-in-out infinite;
 }
 
@@ -103,6 +162,39 @@ body {
   }
 }
 
+
+/*
+ * Crust
+ */
+
+.slice:before {
+  content: '';
+  position: absolute;
+  height: 3vmin;
+  width: 12vmin;
+  background-color: #bbb083;
+  top: -21vmin;
+  left: -6vmin;
+  border-radius: 200vmin 200vmin 1vmin 1vmin / 100vmin 100vmin;
+}
+
+
+/*
+ * Pepperonis
+ */
+
+.slice:after {
+  content: '';
+  border-radius: 100%;
+  position: absolute;
+  width: 2.5vmin;
+  height: 2.5vmin;
+  background-color: #cc333f;
+  left: -2vmin;
+  top: -14vmin;
+  z-index: 2;
+}
+
 .slice:nth-of-type(2n):after {
   box-shadow: 1vmin 5vmin 0 #cc333f;
 }
@@ -111,9 +203,14 @@ body {
   box-shadow: 1vmin 5vmin 0 #cc333f, 3vmin 10vmin 0 #cc333f;
 }
 
+
+/*
+ * Spinning Slices
+ */
+
 .slice:nth-of-type(1) {
-  transform: rotate(-27.75deg);
-  animation-delay: -0.0625s;
+  transform: rotate(-27.75deg); /* increment by 360/13 degrees */
+  animation-delay: -0.0625s;  /* increment by 1/16 of a second */
 }
 
 .slice:nth-of-type(2) {
@@ -169,27 +266,4 @@ body {
 .slice:nth-of-type(12) {
   transform: rotate(-333deg);
   animation-delay: -0.75s;
-}
-
-.slice:before {
-  content: '';
-  position: absolute;
-  height: 3vmin;
-  width: 12vmin;
-  background-color: #bbb083;
-  top: -21vmin;
-  left: -6vmin;
-  border-radius: 200vmin 200vmin 1vmin 1vmin / 100vmin 100vmin;
-}
-
-.slice:after {
-  content: '';
-  border-radius: 100%;
-  position: absolute;
-  width: 2.5vmin;
-  height: 2.5vmin;
-  background-color: #cc333f;
-  left: -2vmin;
-  top: -14vmin;
-  z-index: 2;
 }
