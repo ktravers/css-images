@@ -65,7 +65,6 @@
   top: 0;
   left: 500px;
   background-color: #F5D659;
-  /*background-color: rgba(245, 214, 89, 0.1);*/
   border-radius: 70px;
   width: 140px;
   height: 140px;
@@ -156,7 +155,7 @@
 }
 
 @keyframes moveSideways {
-  0% { transform: translateX(0%); }
+  0%   { transform: translateX(0%); }
   100% { transform: translateX(100%); }
 }
 
