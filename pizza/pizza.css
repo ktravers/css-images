@@ -40,8 +40,18 @@ body {
  * Apply z-index to layer above pizza.
  */
 
-.cheese {
+.topping {
   position: absolute;
+  z-index: 2;
+}
+
+
+/*
+ * Cheese (Solid Circle)
+ * Apply border radius and background color. Position abs center of pizza.
+ */
+
+.cheese {
   top: 5%;
   left: 5%;
   height: 250px;
@@ -49,11 +59,6 @@ body {
   border-radius: 100%;
   background-color: #FFDC73;
   z-index: 1;
-}
-
-.topping {
-  position: absolute;
-  z-index: 2;
 }
 
 
@@ -156,7 +161,8 @@ body {
   height: 16px;
 }
 
-.mushroom__top, .mushroom__bottom {
+.mushroom__top,
+.mushroom__bottom {
   position: absolute;
   background-color: #f8f8f8;
   border-top-right-radius: 50%;
