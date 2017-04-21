@@ -13,14 +13,15 @@ body {
   width: 100vw;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   background-color: #00BCE1;
 }
 
 
 /*
  * Pizza (Parent Element)
- * Apply position relative to anchor child elements
+ * Apply position relative to anchor child elements.
+ * Apply lowest z-index.
  */
 
 .pizza {
@@ -36,6 +37,7 @@ body {
 /*
  * Toppings (Child Elements)
  * Position absolutely to pizza parent element
+ * Apply z-index to layer above pizza.
  */
 
 .cheese {

@@ -27,6 +27,7 @@ body {
 /*
  * Pizza (Parent Element)
  * Apply position relative to anchor child elements
+ * Apply lowest z-index.
  */
 
 .pizza {
@@ -37,6 +38,7 @@ body {
 /*
  * Toppings (Child Elements)
  * Position absolutely to pizza parent element
+ * Apply z-index to layer above pizza.
  */
 
 .cheese {
