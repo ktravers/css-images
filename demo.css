@@ -1,0 +1,118 @@
+/*
+ * Pizza Party
+ * CSS Images Demo
+ *
+ * Colors
+ * $blue: #00BCE1
+ * $tan: #BBB083;
+ * $yellow: #FFDC73;
+ * $red: #CC333F;
+ * $green: #67A443;
+ */
+
+/*
+ */
+
+
+/*
+ * Base
+ * Use flexgrid to center pizza based on viewport height and width
+ */
+
+body {
+  /*background-color: #00BCE1;*/
+}
+
+
+/*
+ * Pizza (Parent Element)
+ * Apply position relative to anchor child elements
+ */
+
+.pizza {
+  /*background-color: ##BBB083;*/
+}
+
+
+/*
+ * Toppings (Child Elements)
+ * Position absolutely to pizza parent element
+ */
+
+.cheese {
+  /*background-color: #FFDC73;*/
+}
+
+.topping {
+}
+
+
+/*
+ * Pepperonis (Solid Circles)
+ * Apply border radius and background color
+ */
+
+.pepperoni {
+}
+
+.pepperoni:nth-child(1) {
+}
+
+
+/*
+ * Black Olives (Rings)
+ * Apply solid border and border radius
+ */
+
+.black-olive {
+}
+
+
+/*
+ * Green Peppers (Triangles)
+ * Apply solid border, one side with color and zero width,
+ * the other three sides transparent with set widths.
+ */
+
+.green-pepper {
+}
+
+
+/*
+ * Mushrooms (Multi-Part Shape)
+ * Position parent .mushroom element relative, with child .mushroom__top
+ * and .mushroom__bottom elements positioned absolute. Apply border radius
+ * to childrens' top borders only.
+ */
+
+.mushroom {
+}
+
+.mushroom__top,
+.mushroom__bottom {
+}
+
+.mushroom__top {
+}
+
+.mushroom__bottom {
+}
+
+
+/*
+ * Keyframe Animations
+ * https://robots.thoughtbot.com/css-animation-for-beginners
+ */
+
+.pizza {
+  /* animation: rotate 26s linear infinite;*/
+}
+
+
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
