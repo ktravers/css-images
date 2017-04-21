@@ -5,6 +5,7 @@
 
 /*
  * Base
+ * Use flexgrid to center pizza based on viewport height and width
  */
 
 body {
@@ -18,7 +19,8 @@ body {
 
 
 /*
- * Pizza
+ * Pizza (Parent Element)
+ * Apply position relative to anchor child elements
  */
 
 .pizza {
@@ -29,6 +31,12 @@ body {
   border-radius: 100%;
   background-color: #BBB083;
 }
+
+
+/*
+ * Toppings (Child Elements)
+ * Position absolutely to pizza parent element
+ */
 
 .cheese {
   position: absolute;
@@ -41,11 +49,6 @@ body {
   z-index: 1;
 }
 
-
-/*
- * Toppings
- */
-
 .topping {
   position: absolute;
   z-index: 2;
@@ -54,6 +57,7 @@ body {
 
 /*
  * Pepperonis (Solid Circles)
+ * Apply border radius and background color
  */
 
 .pepperoni {
@@ -81,6 +85,7 @@ body {
 
 /*
  * Black Olives (Rings)
+ * Apply solid border and border radius
  */
 
 .black-olive {
@@ -108,6 +113,8 @@ body {
 
 /*
  * Green Peppers (Triangles)
+ * Apply solid border, one side with color and zero width,
+ * the other three sides transparent with set widths.
  */
 
 .green-pepper {
@@ -136,6 +143,9 @@ body {
 
 /*
  * Mushrooms (Multi-Part Shape)
+ * Position parent .mushroom element relative, with child .mushroom__top
+ * and .mushroom__bottom elements positioned absolute. Apply border radius
+ * to childrens' top borders only.
  */
 
 .mushroom {
@@ -147,11 +157,11 @@ body {
 .mushroom__top, .mushroom__bottom {
   position: absolute;
   background-color: #f8f8f8;
+  border-top-right-radius: 50%;
+  border-top-left-radius: 50%;
 }
 
 .mushroom__top {
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
   width: 100%;
   height: 75%;
 }
@@ -180,7 +190,8 @@ body {
 
 
 /*
- * Animation
+ * Keyframe Animations
+ * https://robots.thoughtbot.com/css-animation-for-beginners
  */
 
 .pizza {
@@ -192,4 +203,3 @@ body {
     transform: rotate(360deg);
   }
 }
-
